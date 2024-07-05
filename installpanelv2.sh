@@ -8,7 +8,7 @@ read -p "Masukkan Subdomain Panel: " subdomain
 read -p "Masukkan Domainnode: " domainnode
 
 bash <(curl -s https://pterodactyl-installer.se) <<EOF
-2
+0
 vallzoffcgg
 anjyy
 slebew
@@ -27,19 +27,4 @@ y
 y
 yes
 A
-1
-y
-y
-y
-y
-$subdomain
-y
-VallzGg
-Vallzoffc1e
-y
-$domainnode
-y
-$email
-y
-y
 EOF
