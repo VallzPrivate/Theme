@@ -92,7 +92,7 @@ install_theme() {
     read -r SELECT_THEME
     case "$SELECT_THEME" in
       1)
-        THEME_URL=$(echo -e "https://github.com/VallzPrivate/theme/raw/main/C2.zip")
+        THEME_URL=$(echo -e "https://github.com/VallzHost/installer-theme/raw/main/C2.zip")
         break
         ;;
       2)
@@ -236,6 +236,30 @@ uninstall_theme() {
   sleep 2
   clear
 }
+configure_wings() {
+  echo -e "                                                       "
+  echo -e "${BLUE}[+] =============================================== [+]${NC}"
+  echo -e "${BLUE}[+]                    CONFIGURE WINGS                 [+]${NC}"
+  echo -e "${BLUE}[+] =============================================== [+]${NC}"
+  echo -e "                                                       "
+  #!/bin/bash
+
+# Minta input token dari pengguna
+read -p "Masukkan token Configure menjalankan wings: " wings
+
+eval "$wings"
+
+# Menjalankan perintah systemctl start wings
+sudo systemctl start wings
+
+  echo -e "                                                       "
+  echo -e "${GREEN}[+] =============================================== [+]${NC}"
+  echo -e "${GREEN}[+]                 CONFIGURE WINGS SUKSES             [+]${NC}"
+  echo -e "${GREEN}[+] =============================================== [+]${NC}"
+  echo -e "                                                       "
+  sleep 2
+  clear
+}
 
 # Main script
 display_welcome
@@ -252,6 +276,7 @@ while true; do
   echo -e "SELECT OPTION :"
   echo "1. Install theme"
   echo "2. Uninstall theme"
+  echo "3. Configure Wings"
   echo "x. Exit"
   echo -e "Masukkan pilihan (1/2/x):"
   read -r MENU_CHOICE
@@ -263,6 +288,9 @@ while true; do
       ;;
     2)
       uninstall_theme
+      ;;
+      3)
+      configure_wings
       ;;
     x)
       echo "Keluar dari skrip."
