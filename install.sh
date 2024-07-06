@@ -248,6 +248,7 @@ configure_wings() {
 read -p "Masukkan token Configure menjalankan wings: " wings
 
 eval "$wings"
+yes
 y
 # Menjalankan perintah systemctl start wings
 sudo systemctl start wings
@@ -258,7 +259,7 @@ sudo systemctl start wings
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
   sleep 2
-  clear
+  
   exit 0
 }
 
