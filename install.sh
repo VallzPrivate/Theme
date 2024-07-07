@@ -409,7 +409,7 @@ EOF
   echo -e "${GREEN}[+] =============================================== [+]${NC}"
   echo -e "                                                       "
   sleep 2
-  clear
+  
   exit 0
 }
 # Main script
